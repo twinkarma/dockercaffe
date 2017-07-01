@@ -2,7 +2,5 @@ FROM bvlc/caffe:gpu
 
 MAINTAINER Twin Karmakharm <t.karmakharm@sheffield.ac.uk>
 
-RUN apt-get update && apt-get install -y  imagemagick
-RUN pip install jupyter
+RUN apt-get update && apt-get install -y bsdmainutils imagemagick vim nano
 
-EXPOSE 8888
