@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y bsdmainutils imagemagick vim nano
 RUN export uid=1000 gid=1000 && \
     mkdir -p /home/ubuntu && \
     mkdir -p /etc/sudoers.d && \
-    echo "ubuntu:x:${uid}:${gid}:ubuntu,,,:/home/ubuntu:/bin/bash" >> /etc/passwd && \
+    echo "ubuntu:x:${uid}:${gid}:Ubuntu,,,:/home/ubuntu:/bin/bash" >> /etc/passwd && \
     echo "ubuntu:x:${uid}:" >> /etc/group && \
     echo "ubuntu ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/ubuntu && \
     chmod 0440 /etc/sudoers.d/ubuntu && \
@@ -17,3 +17,4 @@ RUN export uid=1000 gid=1000 && \
 
 USER ubuntu
 ENV HOME /home/ubuntu
+WORKDIR /home/ubuntu
